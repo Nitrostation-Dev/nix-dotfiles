@@ -7,9 +7,6 @@
             brave
             discord
 
-            nuclear
-            easyeffects
-
             neovim
         ];
 }

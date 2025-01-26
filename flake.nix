@@ -7,6 +7,8 @@
         home-manager.url = "github:nix-community/home-manager/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+        nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
         stylix.url = "github:danth/stylix";
     };
 
@@ -39,10 +41,11 @@
         nixosConfigurations.${systemSettings.hostname} = lib.nixosSystem {
             system = systemSettings.system;
             modules = [
+                nix-flatpak.nixosModules.nix-flatpak
+                inputs.stylix.nixosModules.stylix
+
                 ./config/configuration.nix
                 ./hardware-configuration.nix
-
-                inputs.stylix.nixosModules.stylix
             ];
             specialArgs = {
                 inherit inputs;
@@ -55,9 +58,10 @@
             inherit pkgs;
 
             modules = [
-                ./config/home.nix
-
+                homeManagerModules.nix-flatpak
                 inputs.stylix.homeManagerModules.stylix
+                
+                ./config/home.nix
             ];
             extraSpecialArgs = {
                 inherit inputs;
