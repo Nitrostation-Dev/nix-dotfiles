@@ -41,7 +41,7 @@
         nixosConfigurations.${systemSettings.hostname} = lib.nixosSystem {
             system = systemSettings.system;
             modules = [
-                nix-flatpak.nixosModules.nix-flatpak
+                inputs.nix-flatpak.nixosModules.nix-flatpak
                 inputs.stylix.nixosModules.stylix
 
                 ./config/configuration.nix
@@ -58,7 +58,7 @@
             inherit pkgs;
 
             modules = [
-                homeManagerModules.nix-flatpak
+                inputs.nix-flatpak.homeManagerModules.nix-flatpak
                 inputs.stylix.homeManagerModules.stylix
                 
                 ./config/home.nix

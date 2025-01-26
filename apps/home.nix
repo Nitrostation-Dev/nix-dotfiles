@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
     imports = [
-        ./flatpak/home.nix
+        # ./flatpak/home.nix
     ];
 
     programs.vscode.enable = true;
