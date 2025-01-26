@@ -28,6 +28,14 @@
                 terminal = 10;
             };
         };
+        iconTheme = {
+            enable = true;
+            package = pkgs.catppuccin-papirus-folders;
+            dark = "Catppuccin Mocha Sapphire";
+            light = "Catppuccin Latte Sapphire";
+        };
+
+
         base16Scheme = ../../system/style/catppuccin-mocha.yaml;
 
         targets.vscode.enable = false;
