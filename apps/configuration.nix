@@ -4,6 +4,8 @@
         [
             firefox
 
+            gnome-tweaks
+
             wget
             git
             curl

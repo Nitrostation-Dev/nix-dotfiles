@@ -31,8 +31,8 @@
         iconTheme = {
             enable = true;
             package = pkgs.catppuccin-papirus-folders;
-            dark = "Catppuccin Mocha Sapphire";
-            light = "Catppuccin Latte Sapphire";
+            dark = "Papirus-Dark";
+            light = "Papirus-Light";
         };
 
 
