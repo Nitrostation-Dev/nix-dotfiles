@@ -11,6 +11,7 @@
             brave
             discord
 
+            strawberry
             easyeffects
 
             neovim
