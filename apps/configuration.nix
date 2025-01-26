@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+    imports = [
+        ./flatpak/configuration.nix
+    ];
+
     environment.systemPackages = with pkgs;
         [
             firefox
