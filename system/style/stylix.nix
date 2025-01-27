@@ -26,8 +26,8 @@
 
         cursor = {
             package = pkgs.catppuccin-cursors.mochaDark;
-            name = "Catppuccin-mocha-dark";
-            size = 32;
+            name = "catppuccin-mocha-dark-cursors";
+            size = 28;
         };
     };
 }

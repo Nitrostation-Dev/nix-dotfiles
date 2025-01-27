@@ -38,8 +38,8 @@
 
         cursor = {
             package = pkgs.catppuccin-cursors.mochaDark;
-            name = "Catppuccin-mocha-dark";
-            size = 32;
+            name = "catppuccin-mocha-dark-cursors";
+            size = 28;
         };
 
         base16Scheme = ../../system/style/catppuccin-mocha.yaml;
@@ -50,8 +50,8 @@
     home.pointerCursor = lib.mkForce {
         gtk.enable = true;
         x11.enable = true;
-        name = "Catppuccin-mocha-dark";
+        name = "catppuccin-mocha-dark-cursors";
         package = pkgs.catppuccin-cursors.mochaDark;
-        size = 32;
+        size = 28;
     };
 }
