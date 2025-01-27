@@ -15,5 +15,7 @@
             easyeffects
 
             neovim
+
+            tic-80
         ];
 }
