@@ -23,5 +23,11 @@
             };
         };
         base16Scheme = ./catppuccin-mocha.yaml;
+
+        cursor = {
+            package = pkgs.catppuccin-cursors.mochaDark;
+            name = "Catppuccin-mocha-dark";
+            size = 32;
+        };
     };
 }

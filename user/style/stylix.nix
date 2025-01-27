@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
     stylix = {
         enable = true;
@@ -28,6 +28,7 @@
                 terminal = 10;
             };
         };
+
         iconTheme = {
             enable = true;
             package = pkgs.catppuccin-papirus-folders;
@@ -35,9 +36,22 @@
             light = "Papirus-Light";
         };
 
+        cursor = {
+            package = pkgs.catppuccin-cursors.mochaDark;
+            name = "Catppuccin-mocha-dark";
+            size = 32;
+        };
 
         base16Scheme = ../../system/style/catppuccin-mocha.yaml;
 
         targets.vscode.enable = false;
+    };
+
+    home.pointerCursor = lib.mkForce {
+        gtk.enable = true;
+        x11.enable = true;
+        name = "Catppuccin-mocha-dark";
+        package = pkgs.catppuccin-cursors.mochaDark;
+        size = 32;
     };
 }
