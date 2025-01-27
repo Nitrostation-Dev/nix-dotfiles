@@ -49,7 +49,7 @@
             cpu-display = "numeric";
             mem-display = "numeric";
             show-fs = false;
-        }
+        };
 
         # 4. Unite
         "org/gnome/shell/extensions/unite" = {
