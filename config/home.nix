@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, ... }:
 {
     imports = [
+        ../user/wm/gnome/home.nix
         ../apps/home.nix
 
         ../user/style/stylix.nix
