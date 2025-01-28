@@ -2,6 +2,7 @@
     config,
     pkgs,
     systemSettings,
+    userSettings,
     ...
 }:
 
@@ -10,7 +11,7 @@
         ../system/hardware/bluetooth.nix
         ../system/hardware/pipewire.nix
         ../system/hardware/printer.nix
-        ../system/wm/gnome.nix
+        (./. + "../../system/wm" + ("/" + userSettings.wm) + ".nix")
 
         ../apps/configuration.nix
         ../system/style/stylix.nix

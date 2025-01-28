@@ -1,7 +1,7 @@
-{ inputs, lib, config, pkgs, ... }:
+{ inputs, lib, config, pkgs, userSettings, ... }:
 {
     imports = [
-        ../user/wm/gnome/home.nix
+        (./. + "../../user/wm" + ("/" + userSettings.wm) + "/home.nix")
         ../apps/home.nix
 
         ../user/style/stylix.nix
