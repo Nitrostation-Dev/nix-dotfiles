@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
     imports = [
-        # ./flatpak/configuration.nix
+        ./flatpak/configuration.nix
     ];
 
     environment.systemPackages = with pkgs;

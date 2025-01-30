@@ -58,7 +58,7 @@
             inherit pkgs;
 
             modules = [
-                inputs.nix-flatpak.homeManagerModules.nix-flatpak
+                # inputs.nix-flatpak.homeManagerModules.nix-flatpak
                 inputs.stylix.homeManagerModules.stylix
                 
                 ./config/home.nix
