@@ -2,7 +2,7 @@
 {
     stylix = {
         enable = true;
-        image = ../../system/style/wallpaper.png;
+        image = ./wallpaper.png;
         polarity = "dark";
         fonts = {
             serif = {
@@ -42,7 +42,7 @@
             size = 28;
         };
 
-        base16Scheme = ../../system/style/catppuccin-mocha.yaml;
+        base16Scheme = ./catppuccin-mocha.yaml;
 
         targets.vscode.enable = false;
     };

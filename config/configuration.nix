@@ -14,7 +14,7 @@
         (./. + "../../system/wm" + ("/" + userSettings.wm) + ".nix")
 
         ../apps/configuration.nix
-        ../system/style/stylix.nix
+        ../../themes/catppuccin-mocha/configuration.nix
     ];
 
     # Bootloader
