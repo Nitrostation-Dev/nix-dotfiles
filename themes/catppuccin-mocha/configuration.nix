@@ -2,7 +2,7 @@
 {
     stylix = {
         enable = true;
-        image = ../../themes/catppuccin-mocha/wallpaper.png;
+        image = ./wallpaper.png;
         polarity = "dark";
         fonts = {
             serif = {
@@ -22,7 +22,7 @@
                 name = "Noto Color Emoji";
             };
         };
-        base16Scheme = ../../themes/catppuccin-mocha/catppuccin-mocha.yaml;
+        base16Scheme = ./colorScheme.yaml;
 
         cursor = {
             package = pkgs.catppuccin-cursors.mochaDark;

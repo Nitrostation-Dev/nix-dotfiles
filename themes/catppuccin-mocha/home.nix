@@ -42,7 +42,7 @@
             size = 28;
         };
 
-        base16Scheme = ./catppuccin-mocha.yaml;
+        base16Scheme = ./colorScheme.yaml;
 
         targets.vscode.enable = false;
     };
