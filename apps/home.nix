@@ -2,6 +2,7 @@
 {
     imports = [
         # ./flatpak/home.nix
+        ./apps/retroarch.nix
     ];
 
     programs.vscode.enable = true;

@@ -4,7 +4,7 @@
         (./. + "../../user/wm" + ("/" + userSettings.wm) + "/home.nix")
         ../apps/home.nix
 
-        (./. + "../../themes" + ("/" + userSettings.theme) + "/configuration.nix")
+        (./. + "../../themes" + ("/" + userSettings.theme) + "/home.nix")
     ];
 
     # programs.bash.profileExtra = lib.mkAfter ''
