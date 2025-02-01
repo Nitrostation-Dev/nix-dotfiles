@@ -2,7 +2,7 @@
 {
     imports = [
         (./. + "../../user/wm" + ("/" + userSettings.wm) + "/home.nix")
-        ../apps/home.nix
+        ../pkgs/home.nix
 
         (./. + "../../themes" + ("/" + userSettings.theme) + "/home.nix")
     ];

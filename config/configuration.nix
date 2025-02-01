@@ -13,7 +13,7 @@
         ../system/hardware/printer.nix
         (./. + "../../system/wm" + ("/" + userSettings.wm) + ".nix")
 
-        ../apps/configuration.nix
+        ../pkgs/configuration.nix
         (./. + "../../themes" + ("/" + userSettings.theme) + "/configuration.nix")
     ];
 
