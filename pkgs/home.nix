@@ -3,6 +3,7 @@
     imports = [
         # ./flatpak/home.nix
         ./apps/retroarch.nix
+        ./apps/floorp.nix
     ];
 
     programs.vscode.enable = true;
