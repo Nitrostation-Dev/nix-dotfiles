@@ -26,7 +26,7 @@
         userSettings = {
             username = "pranavanath";
             wm = "gnome";
-            theme = "catppuccin-mocha";
+            theme = "gruvbox-dark";
         };
 
         pkgs = import inputs.nixpkgs {
