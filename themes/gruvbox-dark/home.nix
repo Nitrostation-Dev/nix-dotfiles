@@ -38,7 +38,7 @@
 
         cursor = {
             package = pkgs.phinger-cursors;
-            name = "Phinger-cursors-dark";
+            name = "phinger-cursors-dark";
             size = 28;
         };
 
@@ -50,7 +50,7 @@
     home.pointerCursor = lib.mkForce {
         gtk.enable = true;
         x11.enable = true;
-        name = "Phinger-cursors-dark";
+        name = "phinger-cursors-dark";
         package = pkgs.phinger-cursors;
         size = 28;
     };
