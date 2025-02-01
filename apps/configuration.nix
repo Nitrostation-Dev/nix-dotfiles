@@ -2,6 +2,8 @@
 {
     imports = [
         ./flatpak/configuration.nix
+
+        ./fonts/fonts.nix
     ];
 
     environment.systemPackages = with pkgs;
