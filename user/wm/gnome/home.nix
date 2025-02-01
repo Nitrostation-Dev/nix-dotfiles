@@ -18,6 +18,9 @@ in
                 "app.zen_browser.zen.desktop" "home-manager-discord.desktop" "org.strawberrymusicplayer.strawberry.desktop" "home-manager-com.github.wwmm.easyeffects.desktop" "home-manager-code.desktop"
             ];
         };
+        "org/gnome/desktop/wm/preferences" = {
+            button-layout = "appmenu:minimize,maximize,close";
+        };
 
         # Extension Settings
         "org/gnome/shell" = {
