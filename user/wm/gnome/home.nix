@@ -9,7 +9,6 @@ in
         gnomeExtensions.dash2dock-lite
         gnomeExtensions.tophat
         gnomeExtensions.unite
-        gnomeExtensions.coverflow-alt-tab
     ];
 
     dconf.settings = {
