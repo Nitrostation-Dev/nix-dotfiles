@@ -13,6 +13,13 @@ in
     ];
 
     dconf.settings = {
+        # Gnome Settings
+        "org/gnome/shell" = {
+            favorite-apps = [
+                "app.zen_browser.zen.desktop" "home-manager-discord.desktop" "org.strawberrymusicplayer.strawberry.desktop" "home-manager-com.github.wwmm.easyeffects.desktop" "home-manager-code.desktop"
+            ];
+        };
+
         # Extension Settings
         "org/gnome/shell" = {
             enabled-extensions = [
