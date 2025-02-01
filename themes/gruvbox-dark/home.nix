@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
     stylix = {
         enable = true;
@@ -22,12 +22,30 @@
                 name = "Noto Color Emoji";
             };
         };
-        base16Scheme = ./colorScheme.yaml;
+
+        iconTheme = {
+            enable = true;
+            package = pkgs.catppuccin-papirus-folders;
+            dark = "Papirus-Dark";
+            light = "Papirus-Light";
+        };
 
         cursor = {
             package = pkgs.phinger-cursors;
             name = "phinger-dark-cursors";
             size = 28;
         };
+
+        base16Scheme = ./colorScheme.yaml;
+
+        targets.vscode.enable = false;
+    };
+
+    home.pointerCursor = lib.mkForce {
+        gtk.enable = true;
+        x11.enable = true;
+        name = "phinger-dark-cursors";
+        package = pkgs.phinger-cursors;
+        size = 28;
     };
 }
