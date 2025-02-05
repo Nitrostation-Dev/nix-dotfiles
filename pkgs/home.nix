@@ -3,7 +3,6 @@
     imports = [
         # ./flatpak/home.nix
         ./apps/retroarch.nix
-        ./apps/firefox.nix
         # ./apps/emacs.nix
     ];
 
