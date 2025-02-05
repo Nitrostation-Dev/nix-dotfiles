@@ -48,8 +48,8 @@
     	extraGroups = [ "networkmanager" "wheel" ];
     };
 
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
+    nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfreePredicate = (_: true);
 
     system.stateVersion = "24.11";
 }

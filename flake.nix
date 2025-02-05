@@ -29,18 +29,17 @@
             theme = "catppuccin-mocha";
         };
 
-    in {
-        nixosConfigurations.${systemSettings.hostname} =
-        let
-            pkgs = import inputs.nixpkgs {
-                system = systemSettings.system;
-                config = {
-                    allowUnfree = true;
-                    allowUnfreePredicate = (_: true);
-                };
+        pkgs = import inputs.nixpkgs {
+            system = systemSettings.system;
+            config = {
+                allowUnfree = true;
+                allowUnfreePredicate = (_: true);
             };
+        };
+        lib = inputs.nixpkgs.lib;
 
-        in inputs.nixpkgs.lib.nixosSystem {
+    in {
+        nixosConfigurations.${systemSettings.hostname} = lib.nixosSystem {
             system = systemSettings.system;
             modules = [
                 inputs.nix-flatpak.nixosModules.nix-flatpak

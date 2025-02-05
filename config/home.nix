@@ -7,6 +7,9 @@
         (./. + "../../themes" + ("/" + userSettings.theme) + "/home.nix")
     ];
 
+
+    home-manager.useGlobalPkgs = true;
+    home-manager.useUserPackages = true;
     # programs.bash.profileExtra = lib.mkAfter ''
     #     rm -rf ${config.home.homeDirectory}/.local/share/applications/home-manager
     #     rm -rf ${config.home.homeDirectory}/.icons/nix-icons
