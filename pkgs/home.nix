@@ -4,7 +4,7 @@
         # ./flatpak/home.nix
         ./apps/retroarch.nix
         ./apps/floorp.nix
-        ./apps/emacs.nix
+        # ./apps/emacs.nix
     ];
 
     programs.vscode.enable = true;

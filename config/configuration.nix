@@ -11,6 +11,7 @@
         ../system/hardware/bluetooth.nix
         ../system/hardware/pipewire.nix
         ../system/hardware/printer.nix
+        ../system/hardware/graphics.nix
         (./. + "../../system/wm" + ("/" + userSettings.wm) + ".nix")
 
         ../pkgs/configuration.nix
