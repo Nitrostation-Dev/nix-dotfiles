@@ -48,5 +48,8 @@
     	extraGroups = [ "networkmanager" "wheel" ];
     };
 
+    home-manager.useGlobalPkgs = true;
+    home-manager.useUserPackages = true;
+
     system.stateVersion = "24.11";
 }
