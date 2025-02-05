@@ -1,7 +1,11 @@
 { pkgs, ... }:
 {
-    programs.floorp.enable = true;
-    programs.floorp.package = pkgs.floorp;
+    programs.firefox = {
+        enable = true;
+        preferences = {
+            "widget.use-xdg-desktop-portal.file-picker" = 1;
+        };
+    };
 
     xdg.mimeApps = {
         enable = true;

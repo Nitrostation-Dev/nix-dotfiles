@@ -3,7 +3,7 @@
     imports = [
         # ./flatpak/home.nix
         ./apps/retroarch.nix
-        ./apps/floorp.nix
+        ./apps/firefox.nix
         # ./apps/emacs.nix
     ];
 
@@ -11,7 +11,6 @@
 
     home.packages = with pkgs; 
         [
-            brave
             discord
 
             strawberry
