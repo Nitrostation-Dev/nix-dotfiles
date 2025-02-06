@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
     imports = [
-        ./flatpak/configuration.nix
+        ./apps/flatpak.nix
+        ./apps/fonts.nix
 
-        ./fonts/fonts.nix
+        ./apps/syncthing.nix
     ];
 
     environment.systemPackages = with pkgs;

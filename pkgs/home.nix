@@ -2,7 +2,6 @@
 {
     imports = [
         ./apps/retroarch.nix
-        ./apps/syncthing.nix
         # ./apps/emacs.nix
     ];
 
