@@ -23,6 +23,7 @@
         "sd_mod"
         "rtsx_pci_sdmmc"
     ];
+    boot.supportedFilesystems = [ "ntfs" ];
     boot.initrd.kernelModules = [ ];
     boot.kernelModules = [ "kvm-intel" ];
     boot.extraModulePackages = [ ];
@@ -39,6 +40,12 @@
         "fmask=0077"
         "dmask=0077"
         ];
+    };
+
+    fileSystems."/mnt/Local Disk" = {
+        device = "/dev/sda1";
+        fsType = "ntfs-3g";
+        options = [ "rw" "uid=1000" ];
     };
 
     swapDevices = [ ];
