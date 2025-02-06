@@ -5,6 +5,6 @@
         jetbrains-mono
         maple-mono-NF
 
-        (nerdfonts.override { fonts = [ "JetbrainsMono" ]; })
+        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 }

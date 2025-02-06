@@ -6,7 +6,7 @@
         settings = {
             font = {
                 normal = [ "Maple Mono NF" "Jetbrains Mono NF" ];
-                size = 12.0;
+                size = 11.0;
             };
         };
     };
