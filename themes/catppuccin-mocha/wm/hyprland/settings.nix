@@ -1,10 +1,14 @@
-{ config, ... }:
+{ config, pkgs, lib, userSettings, ... }:
+# lib.mkIf (userSettings.wm == "hyprland")
 {
+    options = with lib; with types; {
+        hyprland_theme_settings = mkOption { type = str; };
+    };
     config = {
         hyprland_theme_settings = ''
 # LOOK AND FEEL
 general {
-    gaps_in = 2
+    gaps_in = 4 
     gaps_out = 10
 
     border_size = 2

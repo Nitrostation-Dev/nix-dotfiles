@@ -1,7 +1,10 @@
-{ config, ... }:
+{ config, pkgs, userSettings, systemSettings, ... }:
 {
-    imports = [
-        # ./. + ("../../../../themes" + (""))
+    home.packages = with pkgs; [
+        nautilus
+        file-roller
+
+        fuzzel
     ];
 
     wayland.windowManager.hyprland = {
@@ -9,11 +12,6 @@
         extraConfig = ''
 # MONITORS
 monitor=,preferred,auto,1.0
-
-# PROGRAMS
-$terminal = kitty
-$fileManager = dolphin
-$menu = wofi --show drun
 
 # ENVIRONMENT VARIABLES
 env = XCURSOR_SIZE,32
@@ -23,50 +21,37 @@ env = HYPRCURSOR_SIZE,32
 general {
     gaps_in = 5
     gaps_out = 20
-
     border_size = 2
-
     col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
     col.inactive_border = rgba(595959aa)
-
     resize_on_border = false
-
     allow_tearing = false
-
     layout = dwindle
 }
-
 decoration {
     rounding = 10
-
     active_opacity = 1.0
     inactive_opacity = 1.0
-
     shadow {
         enabled = true
         range = 4
         render_power = 3
         color = rgba(1a1a1aee)
     }
-
     blur {
         enabled = true
         size = 3
         passes = 1
-
         vibrancy = 0.1696
     }
 }
-
 animations {
     enabled = yes, please :)
-
     bezier = easeOutQuint,0.23,1,0.32,1
     bezier = easeInOutCubic,0.65,0.05,0.36,1
     bezier = linear,0,0,1,1
     bezier = almostLinear,0.5,0.5,0.75,1.0
     bezier = quick,0.15,0,0.1,1
-
     animation = global, 1, 10, default
     animation = border, 1, 5.39, easeOutQuint
     animation = windows, 1, 4.79, easeOutQuint
@@ -84,16 +69,16 @@ animations {
     animation = workspacesIn, 1, 1.21, almostLinear, fade
     animation = workspacesOut, 1, 1.94, almostLinear, fade
 }
-
 dwindle {
     pseudotile = true
     preserve_split = true 
 }
-
 master {
     new_status = master
 }
-
+# ENVIRONMENT VARIABLES
+env = XCURSOR_SIZE,32
+env = HYPRCURSOR_SIZE,32
 misc {
     force_default_wallpaper = -1 
     disable_hyprland_logo = false
@@ -101,12 +86,12 @@ misc {
 
 # INPUT
 input {
-    kb_layout = us
-    kb_variant = colemak_dh
+    kb_layout = ${systemSettings.kb_layout}
+    kb_variant = ${systemSettings.kb_variant}
 
-    follow_mouse = 1
-
-    sensitivity = 0.25
+    follow_mouse = 2
+    sensitivity = 0.2
+    accel_profile = 0.2144477506 0.000 0.307 0.615 1.077 1.539 2.002 2.505 3.208 3.910 4.613 5.315 6.018 6.720 7.423 8.125 8.828 9.530 10.233 10.935 12.387
 
     touchpad {
         natural_scroll = true 
@@ -115,19 +100,28 @@ input {
 
 gestures {
     workspace_swipe = true
+    workspace_swipe_fingers = 3
+    workspace_swipe_distance = 800
+    workspace_swipe_min_speed_to_force = 50
 }
 
-# KEYBINDS
-$mainMod = SUPER # Sets "Windows" key as main modifier
+# PROGRAMS
+$terminal = kitty
+$menu = wofi --show drun
 
-bind = $mainMod, RETURN, exec, $terminal
+# KEYBINDS
+$mainMod = SUPER
+
 bind = $mainMod, Q, killactive,
-bind = $mainMod, DELETE, exit,
-bind = $mainMod, E, exec, $fileManager
+bind = $mainMod, F, fullscreen,
 bind = $mainMod, V, togglefloating,
+bind = $mainMod, P, pseudo,
+bind = $mainMod, GRAVE, togglesplit,
+
+bind = $mainMod, DELETE, exit,
+bind = $mainMod, RETURN, exec, $terminal 
+bind = $mainMod, E, exec, nautilus 
 bind = $mainMod, R, exec, $menu
-bind = $mainMod, P, pseudo, # dwindle
-bind = $mainMod, J, togglesplit, # dwindle
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l
@@ -186,7 +180,7 @@ bindl = , XF86AudioPlay, exec, playerctl play-pause
 bindl = , XF86AudioPrev, exec, playerctl previous
 
 # LOAD THEME SPECIFIC SETTINGS
-${config.hyprland_theme_settings}
+# ${config.hyprland_theme_settings}
         '';
     };
 }

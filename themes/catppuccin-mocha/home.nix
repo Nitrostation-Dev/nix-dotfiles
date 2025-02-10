@@ -1,9 +1,11 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, userSettings, ... }:
 {
+    # lib.mkIf (userSettings.wm = "hyprland") {
     imports = [
-        ./wm/hyprland.nix
+        ./wm/hyprland/home.nix
     ];
-
+    # };
+    
     stylix = {
         enable = true;
         image = ./wallpaper.png;
