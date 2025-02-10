@@ -17,6 +17,8 @@
 
             neovim
 
+            lutris
+
             tic-80
         ];
 

@@ -25,7 +25,7 @@
 
         userSettings = {
             username = "pranavanath";
-            wm = "gnome";
+            wm = "hyprland";
             theme = "catppuccin-mocha";
         };
 

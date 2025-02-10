@@ -5,6 +5,10 @@
             gambatte
             mgba
             swanstation
+            snes9x
+            pcsx2
+            ppsspp
+            fbneo
         ]))
     ];
 }

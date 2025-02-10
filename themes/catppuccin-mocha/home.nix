@@ -1,5 +1,9 @@
 { pkgs, lib, ... }:
 {
+    imports = [
+        ./wm/hyprland.nix
+    ];
+
     stylix = {
         enable = true;
         image = ./wallpaper.png;

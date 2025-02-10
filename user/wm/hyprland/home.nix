@@ -1,5 +1,9 @@
-{ ... }:
+{ config, ... }:
 {
+    imports = [
+        # ./. + ("../../../../themes" + (""))
+    ];
+
     wayland.windowManager.hyprland = {
         enable = true;
         extraConfig = ''
@@ -180,6 +184,9 @@ bindl = , XF86AudioNext, exec, playerctl next
 bindl = , XF86AudioPause, exec, playerctl play-pause
 bindl = , XF86AudioPlay, exec, playerctl play-pause
 bindl = , XF86AudioPrev, exec, playerctl previous
+
+# LOAD THEME SPECIFIC SETTINGS
+${config.hyprland_theme_settings}
         '';
     };
 }
