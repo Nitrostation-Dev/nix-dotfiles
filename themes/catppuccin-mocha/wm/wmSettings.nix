@@ -12,35 +12,41 @@ general {
 
     border_size = 2
 
-    col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-    col.inactive_border = rgba(595959aa)
+    col.active_border = rgba(f38ba8ff)
+    col.inactive_border = rgba(6c7086ff)
 
     resize_on_border = false
-
     allow_tearing = false
-
     layout = dwindle
 }
 
 decoration {
-    rounding = 10
+    rounding = 8
 
     active_opacity = 1.0
-    inactive_opacity = 1.0
+    inactive_opacity = 0.9
 
-    shadow {
-        enabled = true
-        range = 4
-        render_power = 3
-        color = rgba(1a1a1aee)
-    }
+    dim_inactive = true
+    dim_strength = 0.075
+    dim_special = 0.4
 
     blur {
         enabled = true
-        size = 3
+        new_optimizations = true
+        size = 8
         passes = 1
 
+        popups = false
+
         vibrancy = 0.1696
+    }
+
+    shadow {
+        enabled = true
+        range = 1
+        render_power = 1
+        color = rgba(1a1a1aff)
+        color_inactive = rgba(1a1a1eff)
     }
 }
         '';

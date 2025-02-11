@@ -4,8 +4,14 @@
         nautilus
         file-roller
 
+        overskride
+        pavucontrol
+
         fuzzel
+        wlogout
     ];
+
+    services.clipman.enable = true;
 
     wayland.windowManager.hyprland = {
         enable = true;
@@ -107,7 +113,7 @@ gestures {
 
 # PROGRAMS
 $terminal = kitty
-$menu = wofi --show drun
+$menu = fuzzel --placeholder="Apps List"
 
 # KEYBINDS
 $mainMod = SUPER
@@ -122,6 +128,7 @@ bind = $mainMod, DELETE, exit,
 bind = $mainMod, RETURN, exec, $terminal 
 bind = $mainMod, E, exec, nautilus 
 bind = $mainMod, R, exec, $menu
+bind = $mainMod SHIFT, V, exec, clipman pick --tool=CUSTOM --tool-args="fuzzel --placeholder=\"Clipboard History\" -d"
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l

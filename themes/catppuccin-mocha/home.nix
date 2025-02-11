@@ -49,6 +49,7 @@
 
         base16Scheme = ./colorScheme.yaml;
 
+        autoEnable = true;
         targets.vscode.enable = false;
     };
 
