@@ -4,17 +4,22 @@
         nautilus
         file-roller
 
-        overskride
-        pavucontrol
-
         fuzzel
         wlogout
+        pavucontrol
+
+        playerctl
+        brightnessctl
     ];
 
     services.clipman.enable = true;
 
     wayland.windowManager.hyprland = {
         enable = true;
+        plugins = [
+            pkgs.hyprlandPlugins.borders-plus-plus
+            pkgs.hyprlandPlugins.hyprfocus
+        ];
         extraConfig = ''
 # MONITORS
 monitor=,preferred,auto,1.0
@@ -124,17 +129,34 @@ bind = $mainMod, V, togglefloating,
 bind = $mainMod, P, pseudo,
 bind = $mainMod, GRAVE, togglesplit,
 
-bind = $mainMod, DELETE, exit,
+bind = $mainMod, DELETE, exec, wlogout
+bind = $mainMod SHIFT, DELETE, exit
 bind = $mainMod, RETURN, exec, $terminal 
 bind = $mainMod, E, exec, nautilus 
 bind = $mainMod, R, exec, $menu
 bind = $mainMod SHIFT, V, exec, clipman pick --tool=CUSTOM --tool-args="fuzzel --placeholder=\"Clipboard History\" -d"
+
+# Cycle focus
+bind = ALT, TAB, cyclenext,
+bind = ALT SHIFT, TAB, cyclenext, prev
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l
 bind = $mainMod, right, movefocus, r
 bind = $mainMod, up, movefocus, u
 bind = $mainMod, down, movefocus, d
+
+# Move focused window with mainMod + SHIFT + arrow keys
+bind = $mainMod SHIFT, left, movewindow, l
+bind = $mainMod SHIFT, right, movewindow, r
+bind = $mainMod SHIFT, up, movewindow, u
+bind = $mainMod SHIFT, down, movewindow, d
+
+# Resize focused window with mainMod + CTRL + arrow keys
+binde = $mainMod CTRL, left, resizeactive, -50 0
+binde = $mainMod CTRL, right, resizeactive, 50 0
+binde = $mainMod CTRL, up, resizeactive, 0 50
+binde = $mainMod CTRL, down, resizeactive, 0 -50
 
 # Switch workspaces with mainMod + [0-9]
 bind = $mainMod, 1, workspace, 1
@@ -173,8 +195,8 @@ bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
 # Laptop multimedia keys for volume and LCD brightness
-bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
+bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
 bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 bindel = ,XF86MonBrightnessUp, exec, brightnessctl s 10%+

@@ -10,6 +10,8 @@
         nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
         stylix.url = "github:danth/stylix";
+
+        # hyprland.url = "github:hyprwm/Hyprland";
     };
 
     outputs = inputs@{ self, ... }:

@@ -2,7 +2,7 @@
 {
     imports = [
         ./apps/neovide.nix
-        ./apps/retroarch.nix
+        # ./apps/retroarch.nix
         # ./apps/emacs.nix
     ];
 
@@ -16,10 +16,11 @@
             easyeffects
 
             neovim
-
-            lutris
+            gnome-calculator
+            gnome-calendar
 
             tic-80
+            lutris
         ];
 
     xdg.mimeApps = {

@@ -8,11 +8,11 @@
 # LOOK AND FEEL
 general {
     gaps_in = 4 
-    gaps_out = 10
+    gaps_out = 8
 
     border_size = 2
 
-    col.active_border = rgba(f38ba8ff)
+    col.active_border = rgba(89b4faff) rgba(94e2d5ff) 45deg
     col.inactive_border = rgba(6c7086ff)
 
     resize_on_border = false
@@ -47,6 +47,16 @@ decoration {
         render_power = 1
         color = rgba(1a1a1aff)
         color_inactive = rgba(1a1a1eff)
+    }
+}
+
+# COLORS
+plugin {
+    borders-plus-plus {
+        add-borders = 0
+        col.border_1 = rgb(1e1e2e)
+        border_size_1 = 5
+        natural_rounding = no
     }
 }
         '';
