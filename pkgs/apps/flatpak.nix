@@ -6,6 +6,6 @@
         location = "https://flathub.org/repo/flathub.flatpakrepo";
     }];
     services.flatpak.packages = [
-        retroarch
+        "org.libretro.RetroArch"
     ];
 }
