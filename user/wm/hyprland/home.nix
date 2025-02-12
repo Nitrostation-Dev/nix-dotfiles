@@ -16,12 +16,14 @@
 
     wayland.windowManager.hyprland = {
         enable = true;
+
         package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-        plugins = [
-            pkgs.hyprlandPlugins.borders-plus-plus
-            # pkgs.hyprlandPlugins.hyprfocus
+
+        plugins = with inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}; [
+            borders-plus-plus
         ];
+
         extraConfig = ''
 # MONITORS
 monitor=,preferred,auto,1.0
