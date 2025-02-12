@@ -54,6 +54,17 @@
         trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
 
+    # Use Fish in Interactive Shell
+    programs.bash = {
+        interactiveShellInit = ''
+if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+then
+    shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+    exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+fi
+        '';
+    };
+
     nixpkgs.config.allowUnfree = true;
     nixpkgs.config.allowUnfreePredicate = (_: true);
 

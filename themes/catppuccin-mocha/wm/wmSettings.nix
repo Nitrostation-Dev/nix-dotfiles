@@ -33,7 +33,7 @@ decoration {
     blur {
         enabled = true
         new_optimizations = true
-        size = 8
+        size = 12
         passes = 1
 
         popups = false
@@ -59,6 +59,15 @@ plugin {
         natural_rounding = no
     }
 }
+
+# Opacity for certain applications
+windowrulev2 = opacity 0.9, class:org.gnome.Nautilus
+windowrulev2 = opacity 0.95, class:Code 
+windowrulev2 = opacity 0.95, class:firefox
+windowrulev2 = opacity 0.9, class:org.gnome.Calendar
+windowrulev2 = opacity 0.9, class:org.gnome.Calculator
+windowrulev2 = opacity 0.9, class:org.pulseaudio.pavucontrol
+windowrulev2 = opacity 0.9, class:.blueman-manager-wrapped
         '';
     };
 }

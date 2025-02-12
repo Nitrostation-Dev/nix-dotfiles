@@ -17,6 +17,10 @@
             git
             curl
             nixfmt-rfc-style
+            grc
+            fzf
+            fd
+            bat
         ];
 
     programs.firefox = {

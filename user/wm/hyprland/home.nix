@@ -94,6 +94,7 @@ master {
 # ENVIRONMENT VARIABLES
 env = XCURSOR_SIZE,32
 env = HYPRCURSOR_SIZE,32
+
 misc {
     force_default_wallpaper = -1 
     disable_hyprland_logo = false
@@ -214,6 +215,17 @@ bindl = , XF86AudioPrev, exec, playerctl previous
 
 # LOAD THEME SPECIFIC SETTINGS
 # ${config.hyprland_theme_settings}
+
+# WindowRules
+windowrulev2 = float, class:org.gnome.Nautilus
+windowrulev2 = float, class:org.gnome.Calculator
+windowrulev2 = float, class:org.pulseaudio.pavucontrol
+windowrulev2 = float, class:.blueman-manager-wrapped
+
+windowrulev2 = size 1200 800, class:org.gnome.Nautilus
+windowrulev2 = size 200 500, class:org.gnome.Calculator
+windowrulev2 = size 500 500, class:org.pulseaudio.pavucontrol
+windowrulev2 = size 500 500, class:.blueman-manager-wrapped
         '';
     };
 }

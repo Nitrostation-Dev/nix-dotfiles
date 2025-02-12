@@ -7,54 +7,21 @@
         (./. + "../../themes" + ("/" + userSettings.theme) + "/home.nix")
     ];
 
-    # programs.bash.profileExtra = lib.mkAfter ''
-    #     rm -rf ${config.home.homeDirectory}/.local/share/applications/home-manager
-    #     rm -rf ${config.home.homeDirectory}/.icons/nix-icons
-    #     ls ${config.home.homeDirectory}/.nix-profile/share/applications/*.desktop > ${config.home.homeDirectory}/.cache/current_desktop_files.txt
-    # '';
-    # home.activation = {
-    #     linkDesktopApplications = {
-    #         after = ["writeBoundary" "createXdgUserDirectories"];
-    #         before = [];
-    #         data = ''
-    #             rm -rf ${config.home.homeDirectory}/.local/share/applications/home-manager
-    #             rm -rf ${config.home.homeDirectory}/.icons/nix-icons
-    #             mkdir -p ${config.home.homeDirectory}/.local/share/applications/home-manager
-    #             mkdir -p ${config.home.homeDirectory}/.icons
-    #             ln -sf ${config.home.homeDirectory}/.nix-profile/share/icons ${config.home.homeDirectory}/.icons/nix-icons
+    # Use Fish
+    programs.fish = {
+        enable = true;
+        interactiveShellInit = ''
+            set fish_greeting # Disable greeting
+        '';
+        plugins = [
+            { name = "grc"; src = pkgs.fishPlugins.grc.src; }
+            { name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
+            { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
+            { name = "done"; src = pkgs.fishPlugins.done.src; }
+        ];
+    };
 
-    #             # Check if the cached desktop files list exists
-    #             if [ -f ${config.home.homeDirectory}/.cache/current_desktop_files.txt ]; then
-    #             current_files=$(cat ${config.home.homeDirectory}/.cache/current_desktop_files.txt)
-    #             else
-    #             current_files=""
-    #             fi
-
-    #             # Symlink new desktop entries
-    #             for desktop_file in ${config.home.homeDirectory}/.nix-profile/share/applications/*.desktop; do
-    #             if ! echo "$current_files" | grep -q "$(basename $desktop_file)"; then
-    #                 ln -sf "$desktop_file" ${config.home.homeDirectory}/.local/share/applications/home-manager/$(basename $desktop_file)
-    #             fi
-    #             done
-
-    #             # Update desktop database
-    #             ${pkgs.desktop-file-utils}/bin/update-desktop-database ${config.home.homeDirectory}/.local/share/applications
-    #         '';
-    #     };
-    # };
-
-    # Default Applications
-    # xdg.mimeApps = {
-    #     enable = true;
-    #     defaultApplications = {
-    #         "text/html" = "app.zen_browser.zen.desktop";
-    #         "x-scheme-handler/https" = "app.zen_browser.zen.desktop";
-    #         "x-scheme-handler/about" = "app.zen_browser.zen.desktop";
-    #         "x-scheme-handler/unknown" = "app.zen_browser.zen.desktop";
-    #     };
-    # };
-
-    home.username = "pranavanath";
-    home.homeDirectory = "/home/pranavanath";
+    home.username = userSettings.username;
+    home.homeDirectory = "/home/${userSettings.username}";
     home.stateVersion = "25.05";
 }

@@ -51,6 +51,10 @@
 
         autoEnable = true;
         targets.vscode.enable = false;
+        opacity = {
+            applications = 0.9;
+            terminal = 0.9;
+        };
     };
 
     home.pointerCursor = lib.mkForce {
@@ -59,5 +63,13 @@
         name = "catppuccin-mocha-dark-cursors";
         package = pkgs.catppuccin-cursors.mochaDark;
         size = 28;
+    };
+
+    # Customize Kitty
+    programs.kitty = {
+        enable = true;
+        settings = {
+            window_padding_width = 16;
+        };
     };
 }
