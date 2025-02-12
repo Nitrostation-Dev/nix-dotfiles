@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, systemSettings, ... }:
+{ inputs, config, pkgs, userSettings, systemSettings, ... }:
 {
     home.packages = with pkgs; [
         nautilus
@@ -16,9 +16,11 @@
 
     wayland.windowManager.hyprland = {
         enable = true;
+        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+        portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
         plugins = [
             pkgs.hyprlandPlugins.borders-plus-plus
-            pkgs.hyprlandPlugins.hyprfocus
+            # pkgs.hyprlandPlugins.hyprfocus
         ];
         extraConfig = ''
 # MONITORS
