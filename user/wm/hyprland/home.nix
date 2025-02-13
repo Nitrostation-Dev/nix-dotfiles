@@ -3,6 +3,7 @@
     home.packages = with pkgs; [
         nautilus
         file-roller
+        gnome-disk-utility
 
         fuzzel
         wlogout

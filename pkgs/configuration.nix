@@ -25,20 +25,8 @@
 
             wineWowPackages.waylandFull
             winetricks
-            lutris
-
-            warpinator
+            bottles
         ];
-
-    networking.firewall = {
-        allowedTCPPorts = [
-            42000
-            42001
-        ];
-        allowedUDPPorts = [
-            5353
-        ];
-    };
 
     programs.firefox = {
         enable = true;
