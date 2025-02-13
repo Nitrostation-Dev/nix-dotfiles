@@ -23,6 +23,10 @@
             fd
             bat
 
+            wineWowPackages.waylandFull
+            winetricks
+            lutris
+
             warpinator
         ];
 

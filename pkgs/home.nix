@@ -2,7 +2,6 @@
 {
     imports = [
         ./apps/neovide.nix
-        ./apps/lutris.nix
         # ./apps/retroarch.nix
         # ./apps/emacs.nix
     ];
