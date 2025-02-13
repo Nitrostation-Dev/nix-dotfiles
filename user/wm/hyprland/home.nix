@@ -32,6 +32,9 @@ monitor=,preferred,auto,1.0
 env = XCURSOR_SIZE,32
 env = HYPRCURSOR_SIZE,32
 
+# STARTUP APPLICATIONS
+exec-once = udiskie
+
 # LOOK AND FEEL
 general {
     gaps_in = 5

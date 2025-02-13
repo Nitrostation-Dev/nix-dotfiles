@@ -17,11 +17,24 @@
             git
             curl
             nixfmt-rfc-style
+            htop
             grc
             fzf
             fd
             bat
+
+            warpinator
         ];
+
+    networking.firewall = {
+        allowedTCPPorts = [
+            42000
+            42001
+        ];
+        allowedUDPPorts = [
+            5353
+        ];
+    };
 
     programs.firefox = {
         enable = true;

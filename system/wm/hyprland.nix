@@ -13,5 +13,9 @@
 
     environment.systemPackages = with pkgs; [
         kitty
+        udisks
+        udiskie
     ];
+
+    services.udisks2.enable = true;
 }

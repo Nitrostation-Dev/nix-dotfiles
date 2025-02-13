@@ -2,6 +2,7 @@
 {
     imports = [
         ./apps/neovide.nix
+        ./apps/lutris.nix
         # ./apps/retroarch.nix
         # ./apps/emacs.nix
     ];
@@ -20,7 +21,6 @@
             gnome-calendar
 
             tic-80
-            lutris
         ];
 
     xdg.mimeApps = {
