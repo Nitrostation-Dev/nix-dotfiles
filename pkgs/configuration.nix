@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
     imports = [
+        ./apps/nh.nix
         ./apps/flatpak.nix
         ./apps/fonts.nix
 
