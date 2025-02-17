@@ -107,6 +107,7 @@ misc {
 # INPUT
 input {
     kb_layout = ${systemSettings.kb_layout}
+    # kb_variant = ${systemSettings.kb_variant}
     kb_variant = ${systemSettings.kb_variant}
 
     follow_mouse = 2

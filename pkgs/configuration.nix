@@ -17,7 +17,11 @@
             wget
             git
             curl
+
             nixfmt-rfc-style
+            
+            gcc
+            cargo
             htop
             grc
             fzf
