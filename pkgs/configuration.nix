@@ -5,6 +5,7 @@
         ./apps/fonts.nix
 
         ./apps/syncthing.nix
+        ./apps/steam.nix
     ];
 
     environment.systemPackages = with pkgs;
@@ -26,6 +27,7 @@
             wineWowPackages.waylandFull
             winetricks
             bottles
+            mangohud
         ];
 
     programs.firefox = {

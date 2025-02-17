@@ -118,6 +118,12 @@ input {
     }
 }
 
+device {
+    name = instant-usb-gaming-mouse-
+    accel_profile = flat
+    sensitivity = -0.2
+}
+
 gestures {
     workspace_swipe = true
     workspace_swipe_fingers = 3
