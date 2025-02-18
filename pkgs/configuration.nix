@@ -7,11 +7,12 @@
 
         ./apps/syncthing.nix
         ./apps/steam.nix
+        ./apps/firefox.nix
     ];
 
     environment.systemPackages = with pkgs;
         [
-            firefox
+            # firefox
 
             gnome-tweaks
 
