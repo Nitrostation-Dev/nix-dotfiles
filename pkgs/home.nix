@@ -21,8 +21,8 @@
             mission-center
             flowtime
             recordbox
-
-            gedit
+                
+            gnome-text-editor
             gnome-calculator
             gnome-calendar
         ];
@@ -30,10 +30,13 @@
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
-            "text/html" = "firefox.desktop";
-            "x-scheme-handler/https" = "firefox.desktop";
-            "x-scheme-handler/about" = "firefox.desktop";
-            "x-scheme-handler/unknown" = "firefox.desktop";
+            "text/html" = "floorp.desktop";
+            "x-scheme-handler/https" = "floorp.desktop";
+            "x-scheme-handler/about" = "floorp.desktop";
+            "x-scheme-handler/unknown" = "floorp.desktop";
+
+            "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
+            "text/plain" = "org.gnome.TextEditor.desktop";
         };
     };
 }

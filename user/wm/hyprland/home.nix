@@ -5,6 +5,7 @@
         file-roller
         gnome-disk-utility
 
+        cava
         zathura
         qimgv
 
