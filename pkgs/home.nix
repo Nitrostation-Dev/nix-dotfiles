@@ -10,16 +10,21 @@
 
     home.packages = with pkgs; 
         [
+            floorp
             discord
 
             strawberry
             easyeffects
 
             neovim
+
+            mission-center
+            flowtime
+            recordbox
+
+            gedit
             gnome-calculator
             gnome-calendar
-
-            tic-80
         ];
 
     xdg.mimeApps = {
